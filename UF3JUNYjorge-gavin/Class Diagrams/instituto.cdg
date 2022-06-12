@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="instituto">
+  <ClassDiagramComponents>
+    <Class name="Instituto" package="" visibility="public" xPosition="173.0" yPosition="28.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="aulas" type="ArrayList&lt;Aula&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Aula" package="" visibility="public" xPosition="9.0" yPosition="380.0">
+      <Fields>
+        <Field name="numOrdenadores" type="int" visibility="private"/>
+        <Field name="nombreAula" type="String" visibility="private"/>
+        <Field name="maxAlumnos" type="int" visibility="private"/>
+        <Field name="alumnos" type="ArrayList&lt;Alumno&gt;" visibility="private"/>
+        <Field name="Profesor" type="Object" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="numOrdenadores"/>
+          <Argument type="String" name="nombreAula"/>
+          <Argument type="int" name="maxAlumnos"/>
+          <Argument type="Profesor" name="profesor"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="anadirAlumno" returnType="Alumno" visibility="public">
+          <Argument type="Alumno" name="alumno"/>
+        </Method>
+        <Method name="getMaxAlumnos" returnType="int" visibility="public"/>
+        <Method name="setMaxAlumnos" returnType="int" visibility="public">
+          <Argument type="int" name="maxAlumnos"/>
+        </Method>
+        <Method name="getNumOrdenadores" returnType="int" visibility="public"/>
+        <Method name="setNumOrdenadores" returnType="int" visibility="public">
+          <Argument type="int" name="numOrdenadores"/>
+        </Method>
+        <Method name="mostrarAlumnos" returnType="Alumno" visibility="public">
+          <Argument type="Alumno" name="alumnos"/>
+        </Method>
+        <Method name="eliminarAlumno" returnType="Alumno" visibility="public">
+          <Argument type="Alumno" name="alumnos"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Alumno" package="" visibility="public" xPosition="713.0" yPosition="15.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido1" type="String" visibility="private"/>
+        <Field name="apellido2" type="String" visibility="private"/>
+        <Field name="email" type="String" visibility="private"/>
+        <Field name="fechaNacimiento" type="String" visibility="private"/>
+        <Field name="codigoCiclo" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido1"/>
+          <Argument type="String" name="apellido2"/>
+          <Argument type="String" name="email"/>
+          <Argument type="String" name="fechaNacimiento"/>
+          <Argument type="String" name="codigoCiclo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="getApellido1" returnType="String" visibility="public"/>
+        <Method name="getApellido2" returnType="String" visibility="public"/>
+        <Method name="getEmail" returnType="String" visibility="public"/>
+        <Method name="setEmail" returnType="void" visibility="public"/>
+        <Method name="getFechaNacimiento" returnType="String" visibility="public"/>
+        <Method name="getCodigoCiclo" returnType="String" visibility="public"/>
+        <Method name="setCodigoCiclo" returnType="String" visibility="public">
+          <Argument type="String" name="codigoCiclo"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Profesor" package="" visibility="public" xPosition="778.0" yPosition="510.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido1" type="String" visibility="private"/>
+        <Field name="apellido2" type="String" visibility="private"/>
+        <Field name="email" type="String" visibility="private"/>
+        <Field name="departamento" type="String" visibility="private"/>
+        <Field name="cargo" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido1"/>
+          <Argument type="String" name="apellido2"/>
+          <Argument type="String" name="email"/>
+          <Argument type="String" name="departamento"/>
+          <Argument type="String" name="cargo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="getApellido1" returnType="String" visibility="public"/>
+        <Method name="getApellido2" returnType="String" visibility="public"/>
+        <Method name="getEmail" returnType="String" visibility="public"/>
+        <Method name="setEmail" returnType="void" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="getDepartamento" returnType="String" visibility="public"/>
+        <Method name="setDepartamento" returnType="void" visibility="public"/>
+        <Method name="getCargo" returnType="String" visibility="public"/>
+        <Method name="setCargo" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="Tiene" source="Aula" target="Alumno" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+    <HasRelation name="Tiene" source="Instituto" target="Aula" type="Composition" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+    <HasRelation name="Tiene" source="Aula" target="Profesor" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
